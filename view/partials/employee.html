@@ -1,0 +1,441 @@
+<!--TODO:EMPLOYEE FEED BACK FORM-->
+<div class="container container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1 style="text-align: left">HELLO EMPLOYEE!</h1>
+            <hr class="intro-hr">
+            <h4 class="jumbotron">{{intro}}</h4>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+
+            <h2>FEEDBACK</h2>
+            <hr class="intro-hr">
+
+            <form role="form" name="employeeForm" class="form-horizontal">
+                <div class="form-group">
+                    <label for="n_of_org" class="control-label col-sm-2">NAME OF THE ORGANISATION:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="n_of_org" ng-model="employee.n_of_org" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="n_of_p" class="control-label col-sm-2">NAME OF AUTHORISED PERSON:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="n_of_p" ng-model="employee.n_of_p" required >
+                    </div>
+                </div>
+
+
+                <br>
+                <hr class="form-hr" style="margin: 12px 0 12px 0;width:100%;">
+                <br><br>
+
+                <div class="form-group col-sm-12">
+                    <label for="designation">DESIGNATION:</label>
+                    <input type="text" class="form-control" id="designation" ng-model="employee.designation" required>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="c_no" >CONTACT NO:</label>
+                    <input type="text" class="form-control" id="c_no" ng-model="employee.c_no" required>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="n_s_o">NUMBER OF STUDENTS OF BIET WORKING IN YOUR ORGANISATION:</label>
+                    <input type="number" class="form-control" id="n_s_o" ng-model="employee.n_s_o" required>
+                </div>
+                <div class="form-group col-sm-12">
+                    <label for="y_o_h">YEAR OF HIRING:</label>
+                    <input type="text" class="form-control" id="y_o_h" placeholder="MM/DD/YYYY" ng-pattern="/\d\d/\d\d/\d\d\d\d/" ng-model="employee.y_o_h" required>
+                </div>
+
+                <br><br>
+                <hr class="form-hr" style="margin: 12px 0 12px 0;width:100%;">
+                <br><br>
+
+                <div class="table-responsive">
+                    <table class="table">
+                        <tr>
+                            <td class="col-sm-7"><h4>YOUR AREA OF SATISFACTION ON THE AREAS GIVEN BELOW</h4></td>
+                            <td class="col-sm-1">1</td>
+                            <td class="col-sm-1">2</td>
+                            <td class="col-sm-1">3</td>
+                            <td class="col-sm-1">4</td>
+                            <td class="col-sm-1">5</td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7"><h5>TECH KNOWLEDGE/SKILL</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.ts" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.ts" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.ts" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.ts" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.ts" >
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7"><h5>GENERAL COMMUNICATION SKILL</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.gc" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.gc" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.gc" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.gc" >
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.gc" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>ABILITY TO WORK IN A TEAM</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.atw">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.atw">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.atw">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.atw">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.atw" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>PLANNING AND ORGANISATION</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.po">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.po">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.po">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.po">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.po" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>CREATIVE/INNOVATIVE APPROACH</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.ci">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.ci">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.ci">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.ci">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.ci" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>ABILITY TO TAKE UP EXTRA RESPONSIBILITY</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.ex">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.ex">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.ex">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.ex">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.ex" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>INVOLVEMENT IN SOCIAL ACTIVITY</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.sa">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.sa">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.sa">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.sa">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.sa" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>ABILITY TO TAKE DECISIONS</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.d">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.d">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.d">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.d">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.d" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>AETHICAL VALUES</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.ev">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.ev">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.ev">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.ev">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.ev" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>LEARNING</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.l">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.l">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.l">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.l">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.l" checked>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-7">
+                                <h5>DISCIPLINE AND PUNCTUALITY</h5></td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="1" ng-model="employee.dp">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="2" ng-model="employee.dp">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="3" ng-model="employee.dp">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="4" ng-model="employee.dp">
+                            </td>
+                            <td class="col-sm-1">
+                                <input type="radio" value="5" ng-model="employee.dp" checked>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <table class="table">
+                        <tr>
+                            <td class="col-sm-8"><h4>AND STILL CONTINUES</h4></td>
+                            <td class="col-sm-2"><h4 style="text-align: left;">YES</h4></td>
+                            <td class="col-sm-2"><h4 style="text-align: left;">NO</h4></td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-8"><h5>WOULD YOU LIKE TO RECRUIT STUDENTS FROM BIET</h5></td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="true" ng-model="employee.rec">
+                            </td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="false" ng-model="employee.rec">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-8"><h5>WOULD YOU LIKE TO HAVE INTERACTION WITH BIET FOR PRODUCT DEV</h5></td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="true" ng-model="employee.int">
+                            </td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="false" ng-model="employee.int">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-8"><h5>WOULD YOU LIKE TO DELIVER LECTURE TO STUDENTS OF BIET ON TECHNOLOGY DEVELOPMENT</h5></td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="true" ng-model="employee.tec">
+                            </td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="false" ng-model="employee.tec">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="col-sm-8"><h5>WOULD YOU LIKE TO RECOMMEND BIET TO OTHER ORGANISATION</h5></td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="true" ng-model="employee.r_o">
+                            </td>
+                            <td class="col-sm-2">
+                                <input type="radio" class="input-radio" value="false" ng-model="employee.r_o">
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <br><br>
+                <hr class="form-hr" style="margin: 12px 0 12px 0;width:100%;">
+                <br><br>
+
+                <h5>YOUR FEEDBACK IS VALUABLE! PLEASE,</h5>
+
+                <div>
+                    <textarea class="form-control" rows="3" ng-model="employee.feedback" required></textarea>
+                </div>
+
+                <br><br>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-primary" ng-disabled="employeeForm.$invalid" ng-click="send(employee ,employeeForm)">SAVE AND SUBMIT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--for tests only-->
+<h2>{{employeeForm.$valid}}</h2>
+<h2>{{employee.n_of_org}} | {{employee.n_of_p}} | {{employee.y_o_h}}</h2>
+<h2>{{employee.ts}}
+    {{employee.gc}}
+    {{employee.atw}}
+    {{employee.po}}
+    {{employee.ci}}
+    {{employee.ex}}
+    {{employee.sa}}
+    {{employee.d}}
+    {{employee.ev}}
+    {{employee.l}}
+    {{employee.dp}}
+    {{employee.rec}}
+    {{employee.int}}
+    {{employee.tec}}
+    {{employee.r_o}}
+</h2>
+<h1 class="jumbotron">{{employee.feedback}}</h1>
+
+<style type="text/css">
+    .container .jumbotron, .container-fluid .jumbotron{
+        background-color: white;
+        border-radius: 0px;
+        text-align: left;
+    }
+    .intro-hr , .form-hr{
+        width:350px;
+        height:2px;
+        background-color: #F77A52;
+        margin-left:0px;
+    }
+    .form-control{
+        border:0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-box-shadow: none ;
+        -moz-box-shadow: none ;
+        box-shadow: none ;
+        text-align: center;
+    }
+    textarea:focus,
+    input[type="radio"]:focus,
+    input[type="radio"]:hover,
+    input[type="text"]:focus,
+    input[type="textbox"]:focus,
+    input[type="password"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="date"]:focus,
+    input[type="month"]:focus,
+    input[type="time"]:focus,
+    input[type="week"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="color"]:focus,
+    .uneditable-input:focus,
+    select:focus,
+    select:hover,
+    option:focus,
+    option:hover{
+        border-bottom: 2px solid #FF974F;
+        -webkit-box-shadow: 0 2px 2px -6px grey;
+        -moz-box-shadow: 0 2px 2px -6px grey;
+        box-shadow: 0px 11px 6px -6px grey;
+        outline: 0 none;
+        margin-right:0px;
+        text-align: left;
+    }
+    h5,h4,h2{
+        text-align: left;
+    }
+
+    .ng-invalid.ng-dirty.ng-touched{
+        background-color: lightpink;
+    }
+</style>

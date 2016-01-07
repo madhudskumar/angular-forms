@@ -1,0 +1,521 @@
+<!--TODO:EMPLOYEE FEED BACK FORM-->
+<div class="container container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1 style="text-align: left">HELLO ALUMNI!</h1>
+            <hr class="intro-hr">
+            <h4 class="jumbotron">{{intro}}</h4>
+        </div>
+    </div>
+</div>
+
+<div class="container container-fluid">
+        <section id="af" class="row form-horizontal" role="form">
+
+            <h1>FEEDBACK</h1>
+            <hr class="form-hr" />
+
+
+            <form name="alumniForm">
+                <div class="form-group">
+                    <label for="name" class="control-label col-sm-2"><h4>NAME</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" ng-model="alumni.name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="f_name" class="control-label col-sm-2"><h4>FATHERS NAME</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="f_name" ng-model="alumni.f_name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob" class="control-label col-sm-2"><h4>DATE OF BIRTH:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dob" ng-model="alumni.dob" ng-pattern="/\d\d/\d\d/\d\d\d\d/" placeholder="MM/DD/YYYY" required>
+                    </div>
+                </div>
+
+                <table class="table">
+                    <tr>
+                        <td class="col-sm-2"><h4>GENDER:</h4></td>
+                        <td class="col-sm-4">
+                            <label for="male"><h5>MALE</h5></label>
+                        </td>
+                        <td class="col-sm-1">
+                             <h4><input type="radio" class="input-radio" id="male" ng-model="alumni.sex" value="m" checked></h4>
+                        </td>
+                        <td class="col-sm-4">
+                            <label for="female"><h5>FEMALE</h5></label>
+                        </td>
+                        <td class="col-sm-1">
+                            <h4><input type="radio" class="input-radio" id="female" ng-model="alumni.sex" value="f" checked></h4>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="form-group">
+                    <label for="address" class="control-label col-sm-2"><h4>ADDRESS:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="textbox" class="form-control" rowspan="3" id="address" ng-model="alumni.address" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact" class="control-label col-sm-2"><h4>CONTACT:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="contact" ng-model="alumni.contact" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="control-label col-sm-2"><h4>E-MAIL:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" ng-model="alumni.email" ng-pattern="/^.*\@\w*\.\w*$/" required>
+                    </div>
+                </div>
+
+
+                <br><br>
+                <h2>EDUCATION</h2>
+                <hr class="form-hr" />
+
+                <table class="table">
+                    <tr>
+                        <td class="col-sm-6"><h4>DEGREE</h4></td>
+                        <td class="col-sm-2"><label for="be">BE</label></td>
+                        <td class="col-sm-2"><label for="me">ME</label></td>
+                        <td class="col-sm-2"><label for="phd">PHD</label></td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-sm-6"><h5>BRANCH</h5></td>
+                        <td class="col-sm-2">
+                            <select id="be" class="form-control" ng-model="alumni.be.branch" aria-label="ngSelected">
+                                <option value="false" ng-selected="true">NA</option>
+                                <option ng-repeat="n in branch.be" value="{{n.id}}">{{n.name}}</option>
+                            </select>
+                        </td>
+                        <td class="col-sm-2">
+                            <select id="me" class="form-control" ng-model="alumni.me.branch" name="be" aria-label="ngSelected">
+                                <option value="false" ng-selected="true">NA</option>
+                                <option ng-repeat="n in branch.be" value="{{n.id}}">{{n.name}}</option>
+                            </select>
+                        </td>
+                        <td class="col-sm-2">
+                            <select id="phd" class="form-control" ng-model="alumni.phd.branch" aria-label="ngSelected">
+                                <option value="false" ng-selected="true">NA</option>
+                                <option ng-repeat="n in branch.be" value="{{n.id}}">{{n.name}}</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-sm-6"><h5>USN</h5></td>
+                        <td class="col-sm-2">
+                            <input type="text" class="form-control" ng-disabled="if(alumni.be.branch == 0)" ng-model="alumni.be.usn" ng-pattern="/\d\w\w\d\d\w\w\d\d\d/">
+                        </td>
+                        <td class="col-sm-2">
+                            <input type="text" class="form-control" ng-model="alumni.me.usn" >
+                        </td>
+                        <td class="col-sm-2">
+                            <input type="text" class="form-control" ng-model="alumni.phd.usn" >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-sm-6"><h5>YEAR OF PASSING</h5></td>
+                        <td class="col-sm-2">
+                            <input type="text" class="form-control" ng-model="alumni.be.y_o_p" placeholder="MM/DD/YYYY" ng-pattern="/\d\d/\d\d/\d\d\d\d/">
+                        </td>
+                        <td class="col-sm-2">
+                            <input type="text" class="form-control" ng-model="alumni.me.y_o_p" placeholder="MM/DD/YYYY" ng-pattern="/\d\d/\d\d/\d\d\d\d/">
+                        </td>
+                        <td class="col-sm-2">
+                            <input type="text" class="form-control" ng-model="alumni.phd.y_o_p" placeholder="MM/DD/YYYY"ng-pattern="/\d\d/\d\d/\d\d\d\d/">
+                        </td>
+                    </tr>
+                </table>
+
+                <br><br>
+                <h2>PROFESSION</h2>
+                <hr class="form-hr" />
+                
+                <div class="form-group">
+                    <label for="iam" class="control-label col-sm-2"><h4>I AM:</h4></label>
+                    <div class="col-sm-10">
+                        <select name="iam" id="iam" class="form-control" ng-model="alumni.iam" aria-label="ngSelected">
+                            <option value="NULL" ng-selected="true">PLEASE SELECT ONE</option>
+                            <option value="employed" style="text-align: center">EMPLOYED</option>
+                            <option value="entrepreneur" style="text-align: center">ENTREPRENEUR</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="n_o_c" class="control-label col-sm-2"><h4>NAME OF THE COMPANY:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="n_o_c" ng-model="alumni.n_o_c" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="des" class="control-label col-sm-2"><h4>DESIGNATION:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="des" ng-model="alumni.des" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nat" class="control-label col-sm-2"><h4>NATURE:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nat" ng-model="alumni.nat" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="d_o_j" class="control-label col-sm-2"><h4>DATE OF JOIN:</h4></label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="d_o_j" ng-model="alumni.d_o_j" placeholder="MM/DD/YYYY" ng-pattern="/\d\d/\d\d/\d\d\d\d/" required>
+                    </div>
+                </div>
+
+                <br><br>
+                <h2>A LITTLE HELP!</h2>
+                <hr class="form-hr" />
+
+                <h3>HOW WOULD YOU RATE THE FOLLOWING</h3>
+                <hr class="">
+
+                <table class="table" ng-class-even="browm">
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="ap">ADDMISSION PROCEDURE</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="ap" min="1" max="5" step="1" value="3" ng-model="alumni.rating.ap" ng-init="alumni.rating.ap = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.ap}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="ce">CAMPUS ENVIRONMENT</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="ce" min="1" max="5" step="1" value="3" ng-model="alumni.rating.ce" ng-init="alumni.rating.ce = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.ce}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="ci">COLLEGE INFRASTRUCTURE</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="ci" min="1" max="5" step="1" value="3" ng-model="alumni.rating.ci" ng-init="alumni.rating.ci = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.ci}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="lab">LAB FACILITY</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="lab" min="1" max="5" step="1" value="3" ng-model="alumni.rating.lab" ng-init="alumni.rating.lab = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.lab}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="lib">LIBRARY FACILITY</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="lib" min="1" max="5" step="1" value="3" ng-model="alumni.rating.lib" ng-init="alumni.rating.lib = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.lib}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="fac">FACULTY</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="fac" min="1" max="5" step="1" value="3" ng-model="alumni.rating.fac" ng-init="alumni.rating.fac = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.fac}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td class="col-sm-6">
+                            <h2>OUR SKILLS IN/AS</h2>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="train">TRAINING AND INDUSTRY OPURTINITY</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="train" min="1" max="5" step="1" value="3" ng-model="alumni.rating.train" ng-init="alumni.rating.train = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.train}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="can">CAANTEEN</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="can" min="1" max="5" step="1" value="3" ng-model="alumni.rating.can" ng-init="alumni.rating.can = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.can}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="pg">PROJECT GUIDE</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="pg" min="1" max="5" step="1" value="3" ng-model="alumni.rating.pg" ng-init="alumni.rating.pg = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.pg}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="ii">INDUSTRY INTERFACE</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="ii" min="1" max="5" step="1" value="3" ng-model="alumni.rating.ii" ng-init="alumni.rating.ii = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.ii}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="per">PERSONALITY DEVELOPMENT</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="per" min="1" max="5" step="1" value="3" ng-model="alumni.rating.per" ng-init="alumni.rating.per = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.per}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="tech">TECHNICAL SUPPORT</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="tech" min="1" max="5" step="1" value="3" ng-model="alumni.rating.tech" ng-init="alumni.rating.tech = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.tech}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="aa">ALUMNI ASSOCIATION/NETWORK</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="aa" min="1" max="5" step="1" value="3" ng-model="alumni.rating.aa" ng-init="alumni.rating.aa = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.aa}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="extra">EXTRA CURICULAR</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="extra" min="1" max="5" step="1" value="3" ng-model="alumni.rating.extra" ng-init="alumni.rating.extra = 3">
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.extra}}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="row">
+                        <td  class="col-sm-6"><label for="overall">OVERALL RATING</label></td>
+                        <td class="col-sm-5">
+                            <div style="margin:12px 0 0 0;">
+                                <input type="range" id="overall" min="1" max="5" step="1" value="3" ng-model="alumni.rating.overall" ng-init="alumni.rating.overall = 3" required>
+                            </div>
+                        </td>
+                        <td class="col-sm-1">
+                            <div class="well">
+                                {{alumni.rating.overall}}
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <div class="form-group">
+                    <label for="accomplish" class="control-label col-sm-2"><h4>ACCOMPLISHMENT(IN BRIEF)</h4></label>
+                    <textarea rows="3" class="form-control col-sm-10" id="accomplish" ng-model="alumni.accomplish"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggest" class="control-label col-sm-2"><h4>ANY SUGGESTIONS(IN BRIEF)</h4></label>
+                    <textarea rowspan="3" class="form-control col-sm-10" id="suggest" ng-model="alumni.suggest"></textarea>
+                </div>
+
+                <br><br>
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-primary" ng-disabled="alumniForm.$invalid" ng-click="send(alumni, alumniForm)">SAVE AND SUBMIT</button>
+                </div>
+            </form>
+        </section>
+</div>
+
+<!--for tests only-->
+<div class="jumbotron">
+    <h1>{{alumni.ranger}}</h1>
+    <h1>{{alumniForm.$valid}}</h1>
+    <h1>{{alumni.name}}</h1>
+    <h1>{{alumni.sex}}</h1>
+    <h1>{{alumni.email}}</h1>
+    <h1>{{alumni.acomplish}}</h1>
+    <h1>{{alumni.suggest}}</h1>
+    <h1>{{alumni.be.branch}}</h1>
+    <h1>{{alumni.be.usn}}</h1>
+    <h1>{{alumni.me.branch}}</h1>
+    <h1>{{alumni.me.usn}}</h1>
+    <h1>{{alumni.phd.branch}}</h1>
+    <h1>{{alumni.phd.usn}}</h1>
+    <h1>{{alumni.iam}}</h1>
+    <h1>{{alumni.rating.ap}}</h1>
+</div>
+
+<style type="text/css">
+    .well{
+        background-color: white;
+        border:0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        height:10px;
+        text-align: center;
+        padding:0;
+        margin:7px 0 0 0;
+    }
+    td>section>h4{
+        text-align: center;
+    }
+    .container .jumbotron, .container-fluid .jumbotron{
+        background-color: white;
+        border-radius: 0;
+        text-align: left;
+    }
+    .intro-hr , .form-hr{
+        width:350px;
+        height:2px;
+        background-color: #FF974F;
+        margin-left:0px;
+        padding-left: 0;
+    }
+    .form-control{
+        border:0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+        -webkit-box-shadow: none ;
+        -moz-box-shadow: none ;
+        box-shadow: none ;
+        text-align: center;
+    }
+    textarea:focus,
+    input[type="radio"]:focus,
+    input[type="radio"]:hover,
+    input[type="text"]:focus,
+    input[type="textbox"]:focus,
+    input[type="password"]:focus,
+    input[type="datetime"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="date"]:focus,
+    input[type="month"]:focus,
+    input[type="time"]:focus,
+    input[type="week"]:focus,
+    input[type="number"]:focus,
+    input[type="email"]:focus,
+    input[type="url"]:focus,
+    input[type="search"]:focus,
+    input[type="tel"]:focus,
+    input[type="color"]:focus,
+    .uneditable-input:focus,
+    select:focus,
+    select:hover,
+    option:focus,
+    option:hover{
+        border-bottom: 2px solid #FF974F;
+        -webkit-box-shadow: 0 2px 2px -6px grey;
+        -moz-box-shadow: 0 2px 2px -6px grey;
+        box-shadow: 0px 11px 6px -6px grey;
+        outline: 0 none;
+        margin-right:0px;
+        text-align: center;
+    }
+    h5,h4,h2{
+        text-align: left;
+    }
+    .ng-invalid.ng-dirty.ng-touched{
+        background-color: lightpink;
+    }
+</style>

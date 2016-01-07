@@ -1,0 +1,15 @@
+{
+  "name": "form_biet",
+  "version": "1.0.0",
+  "description": "forms_e_a",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"http-server -a localhost -p 7777 -c-1"
+  },
+  "author": "mkds <madhudskumar@live.in>",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^1.3.2"
+  }
+}

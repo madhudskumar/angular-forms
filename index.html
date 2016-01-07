@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FORM</title>
+
+    <!--fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+
+    <!--bs dependency-->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/datepicker/css/bootstrap-datepicker3.min.css">
+
+    <!--local dependency-->
+    <link rel="stylesheet" href="app/css/main.css">
+    <link rel="stylesheet" href="app/css/slider.css">
+    <!--<link rel="stylesheet" href="app/css/me.css">-->
+    <base href="http://localhost:7777/" />
+</head>
+<body>
+
+    <div ng-view ng-cloak></div>
+
+    <!--Dependencies scripts-->
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-resource/angular-resource.min.js"></script>
+    <script src="vendor/angular-route/angular-route.min.js"></script>
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--application scripts-->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/MainCtrl.js"></script>
+    <script src="app/controllers/EmployeeCtrl.js"></script>
+    <script src="app/controllers/AlumniCtrl.js"></script>
+    <!--angular pollyfill html5shiv modernizer-->
+    <script src="vendor/modernizer/dist/polyfill.js"></script>
+    <script src="vendor/datepicker/js/bootstrap-datepicker.min.js"></script>
+</body>
+</html>

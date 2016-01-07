@@ -1,0 +1,15 @@
+{
+  "name": "form_biet",
+  "description": "forms_e_a",
+  "main": "index.js",
+  "authors": [
+    "mkds <madhudskumar@live.in>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
